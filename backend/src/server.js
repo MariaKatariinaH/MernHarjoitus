@@ -1,7 +1,6 @@
 import express, { request, response } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { Thing } from './models/Todo.js';
 import todoRoutes from './routes/todoRoutes.js'
 
 const app = express();
@@ -20,7 +19,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/things', todoRoutes);
-
 
 mongoose.connect('mongodb://127.0.0.1:27017/test')
     .then(() => {

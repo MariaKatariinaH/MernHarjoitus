@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ handleUpdate, handleRemove }) => {
+const TodoList = () => {
   const [things, setThings] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  //Hakee listauksen selaimeen:
   useEffect(() => {
     setLoading(true);
     axios
@@ -32,8 +33,6 @@ const TodoList = ({ handleUpdate, handleRemove }) => {
               <TodoItem
                 key={thing._id}
                 thing={thing}
-                //handleUpdate={handleUpdate}
-                //handleRemove={handleRemove}
                 setThings={setThings}
               />
             ))}
